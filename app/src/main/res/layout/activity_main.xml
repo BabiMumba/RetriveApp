@@ -23,6 +23,13 @@
         android:hint="votre prenom"
         android:id="@+id/lastname"
         />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="votre prenom"
+        android:id="@+id/onon"
+        />
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"

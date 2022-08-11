@@ -3,6 +3,7 @@ package com.media.retrive
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,38 +32,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun saveFirestore(firstname: String, lastname: String) {
-
-
-        if (firstname.isEmpty() || lastname.isEmpty()){
+    private fun delete(ch1:EditText,ch2:EditText){
+        ch1.setText("")
+        ch2.setText("")
+    }
+    private fun saveFirestore(nom: String, prenom: String) {
+        if (firstname.text.toString().isEmpty() || lastname.text.toString().isEmpty()){
             Toast.makeText(this, "Champs requis", Toast.LENGTH_SHORT).show()
         }
         else{
+            progressDialog.show()
+            var db = FirebaseFirestore.getInstance()
+            val user: MutableMap<String, Any> = HashMap()
+            user["nom"] = firstname
+            user["prenom"] = lastname
+            db.collection("users")
+                .add(user)
+                .addOnSuccessListener {
 
-            sendInfo()
+                    progressDialog.dismiss()
+                    Toast.makeText(this, "Enregistres avec succer", Toast.LENGTH_SHORT).show()
+                    delete(firstname,lastname)
+                }
+                .addOnFailureListener {
+                    progressDialog.dismiss()
+                    Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
+
+                }
 
         }
 
-    }
 
-    private fun sendInfo() {
-        progressDialog.show()
-        var db = FirebaseFirestore.getInstance()
-        val user: MutableMap<String, Any> = HashMap()
-        user["nom"] = firstname
-        user["prenom"] = lastname
-        db.collection("users")
 
-            .add(user)
-            .addOnSuccessListener {
-                progressDialog.dismiss()
-                Toast.makeText(this, "Enregistres avec succer", Toast.LENGTH_SHORT).show()
-
-            }
-            .addOnFailureListener {
-                progressDialog.dismiss()
-                Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
-
-            }
     }
 }
