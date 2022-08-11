@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
             saveFirestore(nom,prenom )
         }
-        
 
+        ReadFirestore()
     }
 
     private fun delete(ch1:EditText,ch2:EditText){
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         ch2.setText("")
     }
     private fun saveFirestore(nom: String, prenom: String) {
+        ReadFirestore()
         if (firstname.text.toString().isEmpty() || lastname.text.toString().isEmpty()){
             Toast.makeText(this, "Champs requis", Toast.LENGTH_SHORT).show()
         }
@@ -71,10 +72,14 @@ class MainActivity : AppCompatActivity() {
         db.collection("users")
             .get()
             .addOnCompleteListener {
+                val result:StringBuffer = StringBuffer()
                 if (it.isSuccessful){
                     for (document in it.result ){
 
+                        result.append(document.data.getValue("nom")).append("")
+                            .append(document.data.getValue("prenom")).append("\n\n")
                     }
+                    txtResult.setText(result)
                 }
             }
     }

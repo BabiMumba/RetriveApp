@@ -9,6 +9,23 @@
     android:background="@color/white"
     android:padding="10dp"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResult"
+        android:text="salut"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResult2"
+        android:layout_margin="10dp"
+        android:text="salut"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
     <EditText
         android:layout_width="match_parent"
