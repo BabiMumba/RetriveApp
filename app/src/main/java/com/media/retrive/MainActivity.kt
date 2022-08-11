@@ -39,20 +39,28 @@ class MainActivity : AppCompatActivity() {
         }
         else{
 
+            sendInfo()
+
         }
 
+    }
+
+    private fun sendInfo() {
+        progressDialog.show()
         var db = FirebaseFirestore.getInstance()
         val user: MutableMap<String, Any> = HashMap()
         user["nom"] = firstname
         user["prenom"] = lastname
         db.collection("users")
+
             .add(user)
             .addOnSuccessListener {
-
+                progressDialog.dismiss()
                 Toast.makeText(this, "Enregistres avec succer", Toast.LENGTH_SHORT).show()
 
             }
             .addOnFailureListener {
+                progressDialog.dismiss()
                 Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
 
             }
