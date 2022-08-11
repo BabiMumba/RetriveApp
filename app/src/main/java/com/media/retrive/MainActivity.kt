@@ -12,15 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var nom = firstname.text.toString()
-        var prenom = lastname.text.toString()
-
         save_btn.setOnClickListener {
+            var nom = firstname.text.toString()
+            var prenom = lastname.text.toString()
             saveFirestore(nom,prenom )
-
-            firstname.setText("")
-            lastname.setText("")
-
 
         }
         
