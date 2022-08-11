@@ -2,6 +2,8 @@ package com.media.retrive
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +22,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun saveFirestore(firstname: String, lastname: String?) {
+    private fun saveFirestore(firstname: String, lastname: String) {
+        var db = FirebaseFirestore.getInstance()
+        val user: MutableMap<String, Any> = HashMap()
+        user["nom"] = firstname
+        user["prenom"] = lastname
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener {
+
+                Toast.makeText(this, "Enregistres avec succer", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
+
+            }
+
+
 
     }
 }
