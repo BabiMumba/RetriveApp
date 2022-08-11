@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_teste.*
 
 class TesteActivity : AppCompatActivity() {
 

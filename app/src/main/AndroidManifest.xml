@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Retrive"
         tools:targetApi="31" >
         <activity
-            android:name=".TesteActivity"
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
