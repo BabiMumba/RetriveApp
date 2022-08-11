@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         save_btn.setOnClickListener {
             var nom = firstname.text.toString()
             var prenom = lastname.text.toString()
-            saveFirestore(nom,prenom )
 
+            saveFirestore(nom,prenom )
         }
         
 
@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
             progressDialog.show()
             var db = FirebaseFirestore.getInstance()
             val user: MutableMap<String, Any> = HashMap()
-            user["nom"] = firstname
-            user["prenom"] = lastname
+            user["nom"] = nom
+            user["prenom"] = prenom
             db.collection("users")
                 .add(user)
                 .addOnSuccessListener {
@@ -64,5 +64,18 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    }
+    private fun ReadFirestore(){
+        var db = FirebaseFirestore.getInstance()
+        db.collection("users")
+            .get()
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    for (document in it.result ){
+
+                    }
+                }
+            }
     }
 }
