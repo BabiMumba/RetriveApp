@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 holder.textCompany.setText(model.getCompany());
                 Glide.with(getApplicationContext())
                         .load(model.getImage())
+                        .placeholder(R.drawable.idea)
+                        .error(R.drawable.man)
                         .into(holder.imageView);
 
                 holder.itemView.setOnClickListener(v -> {
