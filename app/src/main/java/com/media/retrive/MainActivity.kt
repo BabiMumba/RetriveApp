@@ -28,10 +28,8 @@ class MainActivity : AppCompatActivity() {
 
             saveFirestore(nom,prenom )
         }
-
         ReadFirestore()
     }
-
     private fun delete(ch1:EditText,ch2:EditText){
         ch1.setText("")
         ch2.setText("")
@@ -50,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             db.collection("users")
                 .add(user)
                 .addOnSuccessListener {
-
                     progressDialog.dismiss()
                     Toast.makeText(this, "Enregistres avec succer", Toast.LENGTH_SHORT).show()
                     delete(firstname,lastname)
@@ -58,13 +55,9 @@ class MainActivity : AppCompatActivity() {
                 .addOnFailureListener {
                     progressDialog.dismiss()
                     Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
-
                 }
 
         }
-
-
-
 
     }
     private fun ReadFirestore(){
@@ -72,11 +65,10 @@ class MainActivity : AppCompatActivity() {
         db.collection("users")
             .get()
             .addOnCompleteListener {
-                val result:StringBuffer = StringBuffer()
+                val result = StringBuffer()
                 if (it.isSuccessful){
                     for (document in it.result ){
-
-                        result.append(document.data.getValue("nom")).append("")
+                        result.append(document.data.getValue("nom")).append(" ")
                             .append(document.data.getValue("prenom")).append("\n\n")
                     }
                     txtResult.setText(result)
