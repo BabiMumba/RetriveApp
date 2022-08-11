@@ -33,6 +33,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveFirestore(firstname: String, lastname: String) {
 
+
+        if (firstname.isEmpty() || lastname.isEmpty()){
+            Toast.makeText(this, "Champs requis", Toast.LENGTH_SHORT).show()
+        }
+        else{
+
+        }
+
         var db = FirebaseFirestore.getInstance()
         val user: MutableMap<String, Any> = HashMap()
         user["nom"] = firstname
