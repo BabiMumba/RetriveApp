@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "66964635964",
+    "project_id": "retrive-b4edd",
+    "storage_bucket": "retrive-b4edd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66964635964:android:78d766d1b9947792a55e39",
+        "android_client_info": {
+          "package_name": "com.media.retrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66964635964-89eeg1jti8k3f55gv2d19njm2aniqta6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.media.retrive",
+            "certificate_hash": "209834108b83db17f270d06aadc0ffa5c4916357"
+          }
+        },
+        {
+          "client_id": "66964635964-tdteaaepbkq62aovreutchh6j2m3ku48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuQGDogVrETjqpB8SSgYkAdaesPDm2X1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66964635964-tdteaaepbkq62aovreutchh6j2m3ku48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
