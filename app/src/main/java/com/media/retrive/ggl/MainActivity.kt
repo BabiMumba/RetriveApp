@@ -20,9 +20,11 @@ class MainActivity : AppCompatActivity() {
             if (user != null){
                 val dashbordIntent = Intent(this, DashBoardActivity::class.java)
                 startActivity(dashbordIntent)
+                finish()
             }else{
                 val signinIntent = Intent(this,GoogleAuth::class.java)
                 startActivity(signinIntent)
+                finish()
             }
 
         },2000)

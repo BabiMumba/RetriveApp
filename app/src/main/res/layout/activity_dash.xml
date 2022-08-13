@@ -16,27 +16,42 @@
         />
 
     <TextView
+        android:text="Votre ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:text="Votre ID"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/id_user"
         />
-
     <TextView
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Votre ID"
+        android:text="Votre Nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/name_user"
         />
 
     <TextView
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:text="Votre ID"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_user"
+        />
+    <TextView
+        android:text="Votre Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/email_user"

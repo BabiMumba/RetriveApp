@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -53,14 +54,17 @@ class GoogleAuth : AppCompatActivity() {
                 try {
                     val account = task.getResult(ApiException::class.java)!!
                     Log.d("se connecter","firebase authentification"+account.id)
+                    Toast.makeText(this, "valider", Toast.LENGTH_SHORT).show()
                     firebaseAuthWithGoogle(account.idToken!!)
                 }catch (e:Exception){
 
+                    Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
 
                 }
 
             }else{
 
+                Toast.makeText(this, "erreur ", Toast.LENGTH_SHORT).show()
             }
         }
 
