@@ -32,8 +32,10 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         val uid =auth.currentUser?.uid
-        databaseReference = FirebaseDatabase.getInstance().getReference("users")
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+
         binding.btnSave.setOnClickListener {
+            showProgressBar()
             val nom = binding.nom.text.toString()
             val prenom = binding.prenom.text.toString()
             val bio = binding.bio.text.toString()
@@ -56,9 +58,12 @@ class LoginActivity : AppCompatActivity() {
     private fun uploadeProfil() {
         imageUri = Uri.parse("android.resource://$packageName/${R.drawable.man}")
         storageReference = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
-        storageReference.putFile(imageUri).addOnSuccessListener {
+        storageReference.putFile(imageUri)
+            .addOnSuccessListener {
+                hideProgressbar()
             Toast.makeText(this, "image telecharger", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
+                hideProgressbar()
             Toast.makeText(this, "image non telecharger", Toast.LENGTH_SHORT).show()
         }
 
@@ -69,6 +74,9 @@ class LoginActivity : AppCompatActivity() {
         dialog.setCanceledOnTouchOutside(false)
         dialog.setContentView(R.layout.dialogue_wait)
         dialog.show()
+    }
+    private fun hideProgressbar(){
+        dialog.dismiss()
     }
 
 }
