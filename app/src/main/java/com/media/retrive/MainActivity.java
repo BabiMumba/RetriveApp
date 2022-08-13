@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getFriendList(){
-        Query query = db.collection("friends");
-
+        Query query = db.collection("friends").orderBy("nom",Query.Direction.ASCENDING);
         FirestoreRecyclerOptions<FriendsResponse> response = new FirestoreRecyclerOptions.Builder<FriendsResponse>()
                 .setQuery(query, FriendsResponse.class)
                 .build();
