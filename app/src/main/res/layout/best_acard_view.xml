@@ -22,34 +22,34 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image"
+            android:id="@+id/test_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/babi" />
-        <TextView
-            android:id="@+id/name_bsc"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/image"
-            android:text="babi"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/name_bsc"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/test_image"
+            android:text="babi"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@id/image"
+            android:layout_toEndOf="@id/test_image"
             android:text="lubumbashi city"
-            android:textColor="@color/black"
-             />
+            android:textColor="@color/black" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,9 +59,11 @@
             />
     </RelativeLayout>
         <TextView
+            android:id="@+id/company"
+            android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="normal"
             android:textColor="@color/black"
             android:text="@string/txt"
@@ -74,6 +76,7 @@
         android:background="#F1F1F1"
        >
         <ImageView
+            android:id="@+id/image"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

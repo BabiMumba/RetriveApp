@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public FriendsHolder onCreateViewHolder(ViewGroup group, int i) {
                 View view = LayoutInflater.from(group.getContext())
-                        .inflate(R.layout.list_item, group, false);
+                        .inflate(R.layout.best_acard_view, group, false);
 
                 return new FriendsHolder(view);
             }
