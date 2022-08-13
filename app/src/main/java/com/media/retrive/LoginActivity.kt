@@ -1,8 +1,10 @@
 package com.media.retrive
 
+import android.app.Dialog
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -19,6 +21,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var storageReference: StorageReference
     private lateinit var imageUri: Uri
+    private lateinit var dialog: Dialog
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,4 +63,12 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+    private fun showProgressBar(){
+        dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setContentView(R.layout.dialogue_wait)
+        dialog.show()
+    }
+
 }
