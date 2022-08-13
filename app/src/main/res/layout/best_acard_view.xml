@@ -59,6 +59,7 @@
             />
     </LinearLayout>
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -68,6 +69,33 @@
             android:src="@drawable/ic_baseline_favorite_border_24"
             android:layout_marginStart="20sp"
             />
+        <ImageView
+            android:layout_toEndOf="@id/favris"
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_insert_comment_24"
+            android:layout_marginStart="20sp"
+            />
+        <ImageView
+            android:layout_toEndOf="@id/comment"
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_send_24"
+            android:layout_marginStart="20sp"
+            />
+        <ImageView
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_share_24"
+            android:layout_marginStart="20sp"
+            />
+
+
     </RelativeLayout>
 
 
