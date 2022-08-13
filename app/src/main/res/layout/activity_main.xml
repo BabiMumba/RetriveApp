@@ -13,7 +13,6 @@
         android:layout_centerHorizontal="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
-
         android:id="@+id/friend_list"
         tools:itemCount="4"
         tools:listitem="@layout/best_acard_view"

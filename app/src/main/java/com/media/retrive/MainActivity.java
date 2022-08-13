@@ -1,5 +1,6 @@
 package com.media.retrive;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void getFriendList(){
-        Query query = db.collection("friends");
+        Query query = db.collection("friends").orderBy("name",Query.Direction.ASCENDING);
         FirestoreRecyclerOptions<FriendsResponse> response = new FirestoreRecyclerOptions.Builder<FriendsResponse>()
                 .setQuery(query, FriendsResponse.class)
                 .build();
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public FriendsHolder onCreateViewHolder(ViewGroup group, int i) {
                 View view = LayoutInflater.from(group.getContext())
-                        .inflate(R.layout.list_item, group, false);
+                        .inflate(R.layout.best_acard_view, group, false);
 
                 return new FriendsHolder(view);
             }
