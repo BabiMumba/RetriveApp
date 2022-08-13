@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getFriendList(){
-        Query query = db.collection("friends").orderBy("nom",Query.Direction.ASCENDING);
+        Query query = db.collection("friends");
         FirestoreRecyclerOptions<FriendsResponse> response = new FirestoreRecyclerOptions.Builder<FriendsResponse>()
                 .setQuery(query, FriendsResponse.class)
                 .build();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public FriendsHolder onCreateViewHolder(ViewGroup group, int i) {
                 View view = LayoutInflater.from(group.getContext())
-                        .inflate(R.layout.best_acard_view, group, false);
+                        .inflate(R.layout.list_item, group, false);
 
                 return new FriendsHolder(view);
             }
