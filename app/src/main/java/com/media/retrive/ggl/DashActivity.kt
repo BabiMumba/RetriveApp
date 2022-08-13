@@ -1,11 +1,11 @@
-package com.media.retrive
+package com.media.retrive.ggl
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Google_Authentification : AppCompatActivity() {
+class DashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.google_authentification)
+        setContentView(R.layout.activity_dash)
     }
 }
