@@ -9,6 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.media.retrive.R
 import kotlinx.android.synthetic.main.google_authentification.*
 
@@ -55,12 +56,28 @@ class GoogleAuth : AppCompatActivity() {
                     firebaseAuthWithGoogle(account.idToken!!)
                 }catch (e:Exception){
 
+
                 }
 
             }else{
 
             }
         }
+
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken,null)
+        mAut.signInWithCredential(credential)
+            .addOnCompleteListener(this) {task ->
+                if (task.isSuccessful){
+
+                    val intent = Intent(this, DashBoardActivity::class.java)
+                    startActivity(intent)
+                }else{
+
+                }
+            }
 
     }
 }
