@@ -3,9 +3,11 @@ package com.media.retrive.ggl
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.media.retrive.R
 import kotlinx.android.synthetic.main.google_authentification.*
@@ -47,6 +49,15 @@ class GoogleAuth : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
             if (task.isSuccessful){
+                try {
+                    val account = task.getResult(ApiException::class.java)!!
+                    Log.d("se connecter","firebase authentification"+account.id)
+                    firebaseAuthWithGoogle(account.idToken!!)
+                }catch (e:Exception){
+
+                }
+
+            }else{
 
             }
         }
