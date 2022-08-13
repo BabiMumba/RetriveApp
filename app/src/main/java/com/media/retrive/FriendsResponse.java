@@ -8,15 +8,17 @@ public class FriendsResponse {
     private String title;
     private String company;
     private String image;
+    private int numero;
 
     public FriendsResponse() {
     }
 
-    public FriendsResponse(String name, String title, String company, String image) {
+    public FriendsResponse(int numero,String name, String title, String company, String image) {
         this.name = name;
         this.title = title;
         this.company = company;
         this.image = image;
+        this.numero = numero;
     }
 
     public String getName() {

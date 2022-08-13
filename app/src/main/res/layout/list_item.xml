@@ -58,6 +58,12 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 tools:text="Dicoding" />
+            <TextView
+                android:id="@+id/num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                tools:text="2" />
 
         </LinearLayout>
 

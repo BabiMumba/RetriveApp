@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void getFriendList(){
-        Query query = db.collection("friends").orderBy("name",Query.Direction.ASCENDING);
+        Query query = db.collection("friends");
         FirestoreRecyclerOptions<FriendsResponse> response = new FirestoreRecyclerOptions.Builder<FriendsResponse>()
                 .setQuery(query, FriendsResponse.class)
                 .build();
@@ -61,10 +61,13 @@ public class MainActivity extends AppCompatActivity {
         adapter = new FirestoreRecyclerAdapter<FriendsResponse, FriendsHolder>(response) {
             @Override
             public void onBindViewHolder(FriendsHolder holder, int position, FriendsResponse model) {
+
                 progressBar.setVisibility(View.GONE);
                 holder.textName.setText(model.getName());
                 holder.textTitle.setText(model.getTitle());
+                holder.nume.setText(model.getTitle());
                 holder.textCompany.setText(model.getCompany());
+
                 Glide.with(getApplicationContext())
                         .load(model.getImage())
                         .placeholder(R.drawable.idea)
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public FriendsHolder onCreateViewHolder(ViewGroup group, int i) {
                 View view = LayoutInflater.from(group.getContext())
-                        .inflate(R.layout.best_acard_view, group, false);
+                        .inflate(R.layout.list_item, group, false);
 
                 return new FriendsHolder(view);
             }
@@ -98,10 +101,15 @@ public class MainActivity extends AppCompatActivity {
     public class FriendsHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.name)
         TextView textName;
+
         @BindView(R.id.image)
         CircleImageView imageView;
+
         @BindView(R.id.title)
         TextView textTitle;
+        @BindView(R.id.num)
+        TextView nume;
+
         @BindView(R.id.company)
         TextView textCompany;
 

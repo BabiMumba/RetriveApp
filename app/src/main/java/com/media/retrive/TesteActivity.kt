@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_teste.*
 
 class TesteActivity : AppCompatActivity() {
@@ -56,6 +57,7 @@ class TesteActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                     Toast.makeText(this, "Enregistres echouer", Toast.LENGTH_SHORT).show()
                 }
+
 
         }
 
