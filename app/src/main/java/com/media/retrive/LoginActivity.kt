@@ -52,6 +52,11 @@ class LoginActivity : AppCompatActivity() {
     private fun uploadeProfil() {
         imageUri = Uri.parse("android.resource://$packageName/${R.drawable.man}")
         storageReference = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
+        storageReference.putFile(imageUri).addOnSuccessListener {
+            Toast.makeText(this, "image telecharger", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(this, "image non telecharger", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
