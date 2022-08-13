@@ -21,13 +21,13 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".DashActivity"
+            android:name=".ggl.DashBoardActivity"
             android:exported="false" />
         <activity
             android:name=".ggl.GoogleAuth"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ggl.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
 
             if (user != null){
-                val dashbordIntent = Intent(this, DashActivity::class.java)
+                val dashbordIntent = Intent(this, DashBoardActivity::class.java)
                 startActivity(dashbordIntent)
             }else{
                 val signinIntent = Intent(this,GoogleAuth::class.java)
                 startActivity(signinIntent)
             }
 
-        })
+        },2000)
 
     }
 }
