@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -27,17 +27,17 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             />
+
         <TextView
-            android:layout_below="@id/name_bsc"
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/image"
-            android:text="lubumbashi"
+            android:layout_below="@id/name_bsc"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/image"
+            android:text="lubumbashi city"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            />
+             />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,9 +47,9 @@
             />
     </RelativeLayout>
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-
        >
         <ImageView
             android:layout_gravity="center"
@@ -58,6 +58,18 @@
             android:src="@drawable/babi"
             />
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/favris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            android:layout_marginStart="20sp"
+            />
+    </RelativeLayout>
+
 
 
 </LinearLayout>
