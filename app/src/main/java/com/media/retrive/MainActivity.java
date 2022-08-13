@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 holder.textName.setText(model.getName());
                 holder.textTitle.setText(model.getTitle());
-                holder.nume.setText(model.getTitle());
+                holder.nume.setText(model.getNumero());
                 holder.textCompany.setText(model.getCompany());
 
                 Glide.with(getApplicationContext())

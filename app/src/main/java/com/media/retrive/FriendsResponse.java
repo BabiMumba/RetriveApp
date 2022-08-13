@@ -29,6 +29,13 @@ public class FriendsResponse {
         this.name = name;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void getNumero(String name) {
+        this.numero = numero;
+    }
     public String getTitle() {
         return title;
     }
