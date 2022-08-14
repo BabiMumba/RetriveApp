@@ -25,7 +25,7 @@
             android:textColor="@color/white"
             />
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp"
@@ -87,7 +87,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -116,6 +116,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ad_price"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        android:text="Free"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ad_store"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        android:text="Google play"
+                        />
+
+                    <Button
+                        android:background="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:text="Install"
+                        android:id="@+id/ad_call_to_Action"
+                        />
+
 
                 </LinearLayout>
 
