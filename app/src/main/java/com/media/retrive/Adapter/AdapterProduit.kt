@@ -1,6 +1,7 @@
 package com.media.retrive.Adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -50,6 +51,16 @@ class AdapterProduit(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
+        val view:View
+        if (viewType== VIEW_TYPE_AD){
+            view = LayoutInflater.from(context).inflate(R.layout.row_item_list,parent,false)
+            return  HolderPrduct(view)
+
+        }else{
+            view = LayoutInflater.from(context).inflate(R.layout.row_native_ads,parent,false)
+            return HoldenativeAds(view)
+
+        }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
