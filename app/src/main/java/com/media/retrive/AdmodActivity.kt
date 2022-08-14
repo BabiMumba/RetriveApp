@@ -3,6 +3,7 @@ package com.media.retrive
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
+import com.media.retrive.Adapter.AdapterProduit
 import com.media.retrive.Model.ModelProduct
 
 class AdmodActivity : AppCompatActivity() {
@@ -48,8 +49,12 @@ class AdmodActivity : AppCompatActivity() {
 
         val produArrayList = ArrayList<ModelProduct>()
         for (i in title.indices){
+            val model = ModelProduct(R.drawable.man,title[i],description[i],3.6f)
 
+            produArrayList.add(model)
         }
+
+        val adapterprodut = AdapterProduit(this,produArrayList)
 
     }
 }
