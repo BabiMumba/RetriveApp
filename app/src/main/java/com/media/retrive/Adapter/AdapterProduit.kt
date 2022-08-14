@@ -14,6 +14,7 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
+import com.google.android.gms.ads.nativead.NativeAdView
 import com.media.retrive.Model.ModelProduct
 import com.media.retrive.R
 import java.lang.annotation.Native
@@ -49,6 +50,7 @@ class AdapterProduit(
         val ad_price:TextView = itemview.findViewById(R.id.ad_price)
         val ad_store:TextView = itemview.findViewById(R.id.ad_store)
         val ad_action:Button = itemview.findViewById(R.id.ad_call_to_Action)
+        val nativeAdview:NativeAdView = itemview.findViewById(R.id.nativeAdview)
 
 
 
@@ -200,12 +202,22 @@ class AdapterProduit(
             holdenativeAds.ad_advertiser.text = advertiser
         }
         //media content
-        if (advertiser == null){
-            holdenativeAds.ad_advertiser.visibility = View.INVISIBLE
+        if (mediaContent == null){
+            holdenativeAds.media_view.visibility = View.INVISIBLE
         }else{
-            holdenativeAds.ad_advertiser.visibility = View.VISIBLE
-            holdenativeAds.ad_advertiser.text = advertiser
+            holdenativeAds.media_view.visibility = View.VISIBLE
+            holdenativeAds.media_view.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+            holdenativeAds.media_view.setMediaContent(mediaContent)
         }
+        //call to action
+        if (callToAction == null){
+            holdenativeAds.ad_action.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_action.visibility = View.VISIBLE
+            holdenativeAds.ad_action.text = callToAction
+            holdenativeAds.nativeAdview.callToActionView = holdenativeAds.ad_action
+        }
+        holdenativeAds.nativeAdview.setNativeAd(nativeAd)
 
 
 
@@ -215,6 +227,13 @@ class AdapterProduit(
         return  produArrayList.size
 
     }
+
+    override fun getItemViewType(position: Int): Int {
+
+
+        return super.getItemViewType(position)
+    }
+
 
 
 }
