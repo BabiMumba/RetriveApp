@@ -2,6 +2,7 @@ package com.media.retrive.Adapter
 
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
@@ -14,10 +15,14 @@ import com.media.retrive.R
 class AdapterProduit(
     val context: Context,
     val produArrayList: ArrayList<ModelProduct>
-) {
+):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    companion object{
+        private const val TAG = "PRODUCT_TAG"
+        private const val VIEW_TYPE_CONTENT = 0
+        private const val VIEW_TYPE_AD = 1
 
-
+    }
     //viewHolder class for product .xml
     inner  class HolderPrduct(itemview: View):RecyclerView.ViewHolder(itemview){
 
@@ -40,6 +45,19 @@ class AdapterProduit(
         val ad_action:Button = itemview.findViewById(R.id.ad_call_to_Action)
 
 
+
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItemCount(): Int {
+        return  produArrayList.size
 
     }
 
