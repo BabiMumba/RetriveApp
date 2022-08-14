@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.nativead.NativeAd
@@ -130,8 +131,8 @@ class AdapterProduit(
                     }
 
 
-                }).withNativeAdOptions(NativeAdOptions.Builder().build())
-            adLoader.loa
+                }).withNativeAdOptions(NativeAdOptions.Builder().build()).build()
+            adLoader.loadAd(AdRequest.Builder().build())
 
 
         }
