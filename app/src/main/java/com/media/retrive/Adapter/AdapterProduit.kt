@@ -1,14 +1,19 @@
 package com.media.retrive.Adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.formats.MediaView
+import com.google.android.gms.ads.nativead.NativeAd
 import com.media.retrive.Model.ModelProduct
 import com.media.retrive.R
+import java.lang.annotation.Native
 
 class AdapterProduit(
     val context: Context,
@@ -76,14 +81,38 @@ class AdapterProduit(
             holderPrduct.ratingbar.rating = rating
 
             holder.itemView.setOnClickListener {
-                Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "$title", Toast.LENGTH_SHORT).show()
             }
 
 
         }else if (getItemViewType(position)== VIEW_TYPE_AD){
 
 
+            //load ad
+            val  adLoader = AdLoader.Builder(context, "")
+                .forNativeAd {nativeAd->
+                    Log.d(TAG,"onNativeAdLoaded")
+                    val holdenativeAds = holder as HoldenativeAds
+                    displayNativeAd(holdenativeAds, nativeAd)
+                    
+
+
+
+
+
+                }.withAdListener(object : AdListener() {
+
+
+                })
+
+
         }
+    }
+
+    private fun displayNativeAd(holdenativeAds: AdapterProduit.HoldenativeAds, nativeAd: NativeAd) {
+
+
+
     }
 
     override fun getItemCount(): Int {
