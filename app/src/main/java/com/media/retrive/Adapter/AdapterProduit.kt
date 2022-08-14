@@ -16,6 +16,12 @@ class AdapterProduit {
         val ratingbar:RatingBar = itemview.findViewById(R.id.etoile)
         val description:TextView = itemview.findViewById(R.id.descripttion)
 
+    }
+    inner class HoldenativeAds(itemview:View):RecyclerView.ViewHolder(itemview){
+        val ad_appicon:ImageView = itemview.findViewById(R.id.ad_app_icon)
+        val ad_headline:TextView = itemview.findViewById(R.id.ad_headline)
 
     }
+
+
 }
