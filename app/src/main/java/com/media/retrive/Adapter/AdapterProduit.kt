@@ -230,8 +230,13 @@ class AdapterProduit(
 
     override fun getItemViewType(position: Int): Int {
 
+        if (position % 5 == 0){
+            return VIEW_TYPE_AD
 
-        return super.getItemViewType(position)
+        }else{
+            return VIEW_TYPE_CONTENT
+        }
+
     }
 
 
