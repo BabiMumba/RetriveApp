@@ -64,7 +64,19 @@ class AdapterProduit(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
+        if (getItemViewType(position)== VIEW_TYPE_CONTENT){
+
+            val model = produArrayList[position]
+            val title = model.title
+            val description = model.description
+            val rating = model.rating
+
+
+        }else if (getItemViewType(position)== VIEW_TYPE_AD){
+
+
+        }
     }
 
     override fun getItemCount(): Int {
