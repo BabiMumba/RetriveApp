@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.media.retrive.Model.ModelProduct
@@ -94,13 +95,32 @@ class AdapterProduit(
                     Log.d(TAG,"onNativeAdLoaded")
                     val holdenativeAds = holder as HoldenativeAds
                     displayNativeAd(holdenativeAds, nativeAd)
-                    
-
-
-
-
 
                 }.withAdListener(object : AdListener() {
+                    override fun onAdClicked() {
+                        super.onAdClicked()
+                        Log.d(TAG,"onAdClicked")
+                    }
+
+                    override fun onAdClosed() {
+                        super.onAdClosed()
+                        Log.d(TAG,"onAdClosed")
+                    }
+
+                    override fun onAdFailedToLoad(p0: LoadAdError) {
+                        super.onAdFailedToLoad(p0)
+                        Log.d(TAG,"onAdFailedToLoad")
+                    }
+
+                    override fun onAdImpression() {
+                        super.onAdImpression()
+                        Log.d(TAG,"onAdImpression")
+                    }
+
+                    override fun onAdLoaded() {
+                        super.onAdLoaded()
+                        Log.d(TAG,"onAdLoaded")
+                    }
 
 
                 })
