@@ -197,7 +197,14 @@ class AdapterProduit(
             holdenativeAds.ad_advertiser.visibility = View.INVISIBLE
         }else{
             holdenativeAds.ad_advertiser.visibility = View.VISIBLE
-            holdenativeAds.ad_advertiser.text = store
+            holdenativeAds.ad_advertiser.text = advertiser
+        }
+        //media content
+        if (advertiser == null){
+            holdenativeAds.ad_advertiser.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_advertiser.visibility = View.VISIBLE
+            holdenativeAds.ad_advertiser.text = advertiser
         }
 
 
