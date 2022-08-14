@@ -149,11 +149,28 @@ class AdapterProduit(
         val advertiser = nativeAd.advertiser
         val mediaContent = nativeAd.mediaContent
 
+        //headline
         if (headLine == null){
-            holdenativeAds.ad_headline.visibility = View.VISIBLE
+            holdenativeAds.ad_headline.visibility = View.INVISIBLE
         }else{
-
+            holdenativeAds.ad_headline.visibility = View.VISIBLE
+            holdenativeAds.ad_headline.text = headLine
         }
+        //body
+        if (body == null){
+            holdenativeAds.ad_body.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_body.visibility = View.VISIBLE
+            holdenativeAds.ad_body.text = headLine
+        }
+        //icone
+        if (icon == null){
+            holdenativeAds.ad_appicon.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_appicon.visibility = View.VISIBLE
+            holdenativeAds.ad_appicon.setImageDrawable(icon.drawable)
+        }
+        //
 
 
     }
