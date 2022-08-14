@@ -2,8 +2,10 @@ package com.media.retrive
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.media.retrive.Adapter.AdapterProduit
 import com.media.retrive.Model.ModelProduct
 
@@ -18,7 +20,14 @@ class AdmodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admod)
 
-        MobileAds.initialize(this)
+        MobileAds.initialize(this){inistatus ->
+            Log.d(TAG,"onCreate: oninitialize")
+
+        }
+        MobileAds.setRequestConfiguration(
+            RequestConfiguration.Builder().setTestDeviceIds(listOf("TESTE DEVICE HERE","TESTE DEVICE HERE")).build()
+
+        )
         title = "publicite native"
 
         productRs = findViewById(R.id.produiRvs)
