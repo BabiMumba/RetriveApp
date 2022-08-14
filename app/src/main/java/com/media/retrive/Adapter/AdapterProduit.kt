@@ -170,7 +170,36 @@ class AdapterProduit(
             holdenativeAds.ad_appicon.visibility = View.VISIBLE
             holdenativeAds.ad_appicon.setImageDrawable(icon.drawable)
         }
-        //
+        //rating
+        if (starating == null){
+            holdenativeAds.ad_stars.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_stars.visibility = View.VISIBLE
+            holdenativeAds.ad_stars.rating = starating.toFloat()
+        }
+        //price
+        if (price == null){
+            holdenativeAds.ad_price.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_price.visibility = View.VISIBLE
+            holdenativeAds.ad_price.text = price
+        }
+
+        //store
+        if (store == null){
+            holdenativeAds.ad_store.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_store.visibility = View.VISIBLE
+            holdenativeAds.ad_store.text = store
+        }
+        //advertiser
+        if (advertiser == null){
+            holdenativeAds.ad_advertiser.visibility = View.INVISIBLE
+        }else{
+            holdenativeAds.ad_advertiser.visibility = View.VISIBLE
+            holdenativeAds.ad_advertiser.text = store
+        }
+
 
 
     }
