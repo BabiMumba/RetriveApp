@@ -139,8 +139,10 @@ class AdapterProduit(
     }
 
     private fun displayNativeAd(holdenativeAds: AdapterProduit.HoldenativeAds, nativeAd: NativeAd) {
-
-
+        val headLine = nativeAd.headline
+        val body = nativeAd.body
+        val callToAction = nativeAd.callToAction
+        val icon = nativeAd.icon
 
     }
 
