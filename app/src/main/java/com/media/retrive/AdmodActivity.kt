@@ -3,6 +3,7 @@ package com.media.retrive
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.MobileAds
 import com.media.retrive.Adapter.AdapterProduit
 import com.media.retrive.Model.ModelProduct
 
@@ -11,22 +12,23 @@ class AdmodActivity : AppCompatActivity() {
     companion object{
         private const val  TAG = "NATIVE_AD"
     }
-    private  lateinit var produRs:RecyclerView
+    private  lateinit var productRs:RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admod)
 
+        MobileAds.initialize(this)
         title = "publicite native"
 
-        produRs = findViewById(R.id.produiRvs)
+        productRs = findViewById(R.id.produiRvs)
 
         loadProducts()
 
     }
 
     private fun loadProducts() {
-        val title = arrayOf(
+        val titles = arrayOf(
             "Android 1.0",
             "Android 2.0",
             "Android 2.1",
@@ -49,12 +51,14 @@ class AdmodActivity : AppCompatActivity() {
 
         val produArrayList = ArrayList<ModelProduct>()
         for (i in title.indices){
-            val model = ModelProduct(R.drawable.man,title[i],description[i],3.6f)
+            val model = ModelProduct(R.drawable.man,titles[i],description[i],3.6f)
 
             produArrayList.add(model)
         }
 
         val adapterprodut = AdapterProduit(this,produArrayList)
+
+        productRs.adapter = adapterprodut
 
     }
 }
