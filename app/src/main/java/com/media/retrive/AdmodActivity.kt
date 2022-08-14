@@ -8,6 +8,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import com.media.retrive.Adapter.AdapterProduit
 import com.media.retrive.Model.ModelProduct
+import kotlinx.android.synthetic.main.activity_admod.*
 
 class AdmodActivity : AppCompatActivity() {
 
@@ -59,15 +60,15 @@ class AdmodActivity : AppCompatActivity() {
         )
 
         val produArrayList = ArrayList<ModelProduct>()
-        for (i in title.indices){
-            val model = ModelProduct(R.drawable.man,titles[i],description[i],3.6f)
 
+        for (i in titles.indices){
+            val model = ModelProduct(R.drawable.man,titles[i],description[i],3.6f)
             produArrayList.add(model)
         }
 
         val adapterprodut = AdapterProduit(this,produArrayList)
 
-        productRs.adapter = adapterprodut
+        produiRvs.adapter = adapterprodut
 
     }
 }
