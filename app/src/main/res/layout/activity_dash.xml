@@ -62,7 +62,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deconnecter"
+        android:visibility="gone"
         android:id="@+id/signOut"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pub Native"
+        android:id="@+id/Native"/>
 
 
 
