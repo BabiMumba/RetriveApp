@@ -37,13 +37,72 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:id="@+id/app_icon"
+                    android:id="@+id/ad_app_icon"
                     android:src="@drawable/man"
                     />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Titre"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:id="@+id/ad_headline"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/ad_advertiser"
+                            android:textSize="14sp"
+                            android:gravity="bottom"
+                            android:textStyle="bold"
+                            android:text="adveriser"
+
+                            />
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/ad_stars"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="description de l'application"
+                    android:id="@+id/ad_body"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
-
-
     </LinearLayout>
 
 
