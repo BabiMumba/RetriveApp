@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9E9595"
     tools:context=".AdmodActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/produiRvs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/row_item_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
