@@ -143,6 +143,18 @@ class AdapterProduit(
         val body = nativeAd.body
         val callToAction = nativeAd.callToAction
         val icon = nativeAd.icon
+        val price = nativeAd.price
+        val store = nativeAd.store
+        val starating = nativeAd.starRating
+        val advertiser = nativeAd.advertiser
+        val mediaContent = nativeAd.mediaContent
+
+        if (headLine == null){
+            holdenativeAds.ad_headline.visibility = View.VISIBLE
+        }else{
+
+        }
+
 
     }
 
