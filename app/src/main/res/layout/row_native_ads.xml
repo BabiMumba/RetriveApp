@@ -38,7 +38,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/ad_app_icon"
-                    android:src="@drawable/man"
+
                     />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,7 +49,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Titre"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:id="@+id/ad_headline"
@@ -66,7 +65,6 @@
                             android:textSize="14sp"
                             android:gravity="bottom"
                             android:textStyle="bold"
-                            android:text="adveriser"
 
                             />
 
@@ -96,7 +94,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorAccent"
                     android:textSize="12sp"
-                    android:text="description de l'application"
                     android:id="@+id/ad_body"
                     />
 
@@ -119,7 +116,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp"
-                        android:text="Free"
+
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -128,7 +125,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp"
-                        android:text="Google play"
+
                         />
 
                     <Button
@@ -138,7 +135,6 @@
                         android:layout_margin="5dp"
                         android:textSize="12sp"
                         android:textColor="@color/white"
-                        android:text="Install"
                         android:id="@+id/ad_call_to_Action"
                         />
 
