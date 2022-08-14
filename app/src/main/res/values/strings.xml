@@ -2,6 +2,6 @@
     <string name="app_name">Retrive</string>
     <string name="txt">bonjour le monde juste vous presenter une des meilleur photos du momonent</string>
 
-    <style name="native_ad_id_teste">ca-app-pub-3940256099942544/2247696110</style>
-    <style name="native_ad_id_livre">ca-app-pub-3001935889519098/2064637270</style>
+    <string name="native_ad_id_teste">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_ad_id_livre">ca-app-pub-3001935889519098/2064637270</string>
 </resources>

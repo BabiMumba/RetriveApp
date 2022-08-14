@@ -94,7 +94,7 @@ class AdapterProduit(
 
 
             //load ad
-            val  adLoader = AdLoader.Builder(context, "")
+            val  adLoader = AdLoader.Builder(context, context.getString(R.string.native_ad_id_teste))
                 .forNativeAd {nativeAd->
                     Log.d(TAG,"onNativeAdLoaded")
                     val holdenativeAds = holder as HoldenativeAds
