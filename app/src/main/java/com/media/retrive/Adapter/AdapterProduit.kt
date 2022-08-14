@@ -4,10 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.formats.MediaView
 import com.media.retrive.Model.ModelProduct
@@ -71,6 +68,16 @@ class AdapterProduit(
             val title = model.title
             val description = model.description
             val rating = model.rating
+            //instance of our holdeproduit ti access ui view
+
+            val holderPrduct = holder as HolderPrduct
+            holderPrduct.titleTv.text = title
+            holderPrduct.description.text = description
+            holderPrduct.ratingbar.rating = rating
+
+            holder.itemView.setOnClickListener {
+                Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
+            }
 
 
         }else if (getItemViewType(position)== VIEW_TYPE_AD){
