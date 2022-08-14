@@ -1,5 +1,6 @@
 package com.media.retrive.Adapter
 
+import android.content.Context
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -7,9 +8,16 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.formats.MediaView
+import com.media.retrive.Model.ModelProduct
 import com.media.retrive.R
 
-class AdapterProduit {
+class AdapterProduit(
+    val context: Context,
+    val produArrayList: ArrayList<ModelProduct>
+) {
+
+
+
     //viewHolder class for product .xml
     inner  class HolderPrduct(itemview: View):RecyclerView.ViewHolder(itemview){
 
@@ -30,6 +38,7 @@ class AdapterProduit {
         val ad_price:TextView = itemview.findViewById(R.id.ad_price)
         val ad_store:TextView = itemview.findViewById(R.id.ad_store)
         val ad_action:Button = itemview.findViewById(R.id.ad_call_to_Action)
+
 
 
     }
