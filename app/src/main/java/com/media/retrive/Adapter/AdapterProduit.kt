@@ -12,6 +12,7 @@ import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.media.retrive.Model.ModelProduct
 import com.media.retrive.R
 import java.lang.annotation.Native
@@ -122,8 +123,15 @@ class AdapterProduit(
                         Log.d(TAG,"onAdLoaded")
                     }
 
+                    override fun onAdOpened() {
+                        super.onAdOpened()
+                        Log.d(TAG,"onAdOpened")
 
-                })
+                    }
+
+
+                }).withNativeAdOptions(NativeAdOptions.Builder().build())
+            adLoader.loa
 
 
         }
