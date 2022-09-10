@@ -22,6 +22,7 @@ import java.lang.annotation.Native
 class AdapterProduit(
     val context: Context,
     val produArrayList: ArrayList<ModelProduct>
+
 ):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object{
@@ -78,6 +79,7 @@ class AdapterProduit(
             val title = model.title
             val description = model.description
             val rating = model.rating
+
             //instance of our holdeproduit ti access ui view
 
             val holderPrduct = holder as HolderPrduct

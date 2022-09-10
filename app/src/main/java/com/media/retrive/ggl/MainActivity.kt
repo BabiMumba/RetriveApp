@@ -8,7 +8,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.media.retrive.R
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var mAuth:FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)

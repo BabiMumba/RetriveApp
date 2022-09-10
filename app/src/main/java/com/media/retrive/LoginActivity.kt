@@ -69,6 +69,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
     private fun showProgressBar(){
+
         dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCanceledOnTouchOutside(false)

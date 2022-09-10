@@ -32,8 +32,8 @@ class AdmodActivity : AppCompatActivity() {
         title = "publicite native"
 
         productRs = findViewById(R.id.produiRvs)
-
         loadProducts()
+
 
     }
 
@@ -46,8 +46,6 @@ class AdmodActivity : AppCompatActivity() {
             "Android 4.1",
             "Android 5.1",
             "Android 6.1"
-
-
         )
         val description = arrayOf(
             "Android Alpha - novembre 23, 2008",
@@ -67,8 +65,8 @@ class AdmodActivity : AppCompatActivity() {
         }
 
         val adapterprodut = AdapterProduit(this,produArrayList)
-
         produiRvs.adapter = adapterprodut
+
 
     }
 }
