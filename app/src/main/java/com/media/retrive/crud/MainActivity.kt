@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), ProductAdapter.OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.home_screen)
 
         initElement()
         initViewModel()
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity(), ProductAdapter.OnItemClickListener {
         description.text = null
     }
 
-     fun onClick(item: Product, position: Int) {
+     override fun onClick(item: Product, position: Int) {
         selected = item
         selected.update_date = Timestamp.now()
 
@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity(), ProductAdapter.OnItemClickListener {
         description.setText(selected.description)
     }
 
-    fun onDelete(item: Product, position: Int) {
+    override fun onDelete(item: Product, position: Int) {
         productViewModel.delete(item.id!!)
     }
 }
